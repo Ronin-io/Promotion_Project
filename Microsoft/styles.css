@@ -1,4 +1,7 @@
+/* used google fonts to import a new font-family called Inter  */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
+/* wild card css selectors that adjusts the broswers margin and padding */
 
 *,
 *::before,
@@ -12,6 +15,8 @@ html {
   box-sizing: border-box;
 }
 
+/* we used the root selector to edit the highest parent element which is the html */
+
 :root {
   --panel-growth-duration: 0.7s;
   --image-text-content-transition-delay: calc(
@@ -19,19 +24,28 @@ html {
   );
 }
 
+
 body {
+  /* this css property changes the font of the body */
   font-family: "Muli", sans-serif;
+  /* displayed the body in a flex position */
   display: flex;
+  /* took the items in the body tag and aligned them to the center */
   align-items: center;
   justify-content: center;
+ /* height is set to vertical height */
   height: 100vh;
+  /* this property tag was used to keep the text in the body tag from spilling out */
   overflow: hidden;
   margin: 0;
   background-image: url('https://i.pinimg.com/originals/0e/b3/17/0eb317a3b45831fe09903bf57fde65cf.gif');
+  /* used this property to prevent the background image from repeating its self */
   background-repeat: no-repeat;
+  /* used this property to stretch out the background image to stretch throughout the whole browser */
   background-size: cover;
 }
 
+/* this class selector is used to take everything that is wrapped inside to set the display and width to a certain degree */
 .container {
   display: flex;
   width: 90vw;
@@ -148,6 +162,7 @@ Overlay Settings */
 /* https://www.youtube.com/watch?v=exb2ab72Xhs */
 
 /* The ::before pseudo-element is being used as the overlay */
+
 .panel::before {
   content: "";
   position: absolute;
@@ -161,23 +176,35 @@ Overlay Settings */
   filter: blur(5px);
 }
 
+
+
 .panel:hover::before {
   opacity: 1;
 }
+
+/* .image__text-content is a class selector created to manipulate  */
 
 .image__text-content {
   transform: translateY(20px);
   opacity: 0;
 }
 
+/* .expanding .image__text-content is a class selector created to control text transition delays and transition smoothness */
+
 .expanding .image__text-content {
   transition: transform 0.25s var(--image-text-content-transition-delay),
     opacity 0.3s var(--image-text-content-transition-delay);
 }
 
+/* The .active .image__text-content causes text within each panel to pop up only when said panel is active. 
+(transition: transform 0.25s, opacity 0.3s; Gives a bounce and fade in effect */
+
 .active .image__text-content {
   transition: transform 0.25s, opacity 0.3s;
 }
+
+/* The active:hover .image__text-content is used to to allow all elements within the <div> to be interactive 
+when a user hovers over it with a mouse pointer //// transform: translateY is a property used to offset the text on a Y axis (vertical axis) */
 
 .active:hover .image__text-content,
 .expanding .image__text-content {
@@ -185,10 +212,14 @@ Overlay Settings */
   opacity: 1;
 }
 
+/* The image__title tag is a class created to manipulate the text contents within the body */
+
 .image__title {
   font-size: 2em;
   text-align: center;
 }
+
+/* The image__description tag is a class created to manipulate the text contents within the body */
 
 .image__description {
   font-size: 1.25em;
@@ -198,10 +229,14 @@ Overlay Settings */
 /* ------------------------------------------------
 Mobile Settings */
 
+/* The @media rule is used in media queries to apply different styles for different media types/devices. */
+
 @media (max-width: 480px) {
   .container {
     width: 100vw;
   }
+  
+  
 
   .panel:nth-of-type(4),
   .panel:nth-of-type(5) {
