@@ -1,12 +1,26 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
 
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
 
-* {
+html {
   box-sizing: border-box;
 }
 
+:root {
+  --panel-growth-duration: 0.7s;
+  --image-text-content-transition-delay: calc(
+    var(--panel-growth-duration) + 0.1s
+  );
+}
+
 body {
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,6 +35,9 @@ body {
 }
 
 .panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -31,85 +48,66 @@ body {
   flex: 0.5;
   margin: 10px;
   position: relative;
-  -webkit-transition: all 700ms ease-in; 
+  transition: flex var(--panel-growth-duration) ease-in;
+  -webkit-transition: flex var(--panel-growth-duration) ease-in;
+  overflow: hidden;
 }
 
-.panel h3 {
-  font-size: 24px;
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  margin: 0;
-  opacity: 0;
-}
-
+.panel.expanding,
 .panel.active {
   flex: 5;
 }
 
-.panel.active h3 {
-  opacity: 1;
-  transition: opacity 0.3s ease-in 0.4s;
-}
-
-/* .menu {
-  position: relative;
-  width: auto;
-  height: auto;
-} */
+li {
+    margin: 65px 0;
+    font-size: 22px;
+    font-family: 'BioRhyme';
+  }
 
 /* --------------------------------------------------------
 Overlay Settings */
 
-.image {
-  position: relative;
-  width: 400px;
-}
-
-.image__img {
-  display: block;
-  width: 100%;
-}
-
-.image__overlay {
+/* The ::before pseudo-element is being used as the overlay */
+.panel::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 50px;
   background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  font-family: 'quicksand', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   opacity: 0;
-  transition: opacity 0.5s ;
- 
+  transition: opacity 0.5s;
+  filter: blur(5px);
 }
 
-.image__overlay--blur {
-  backdrop-filter: blur(5px);
-}
-
-.image__overlay > * {
-  transform: translateY(20px);
-  transition: transform 0.25s;
-}
-
-.image__overlay:hover {
+.panel:hover::before {
   opacity: 1;
 }
 
-.image__overlay:hover > * {
+.image__text-content {
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.expanding .image__text-content {
+  transition: transform 0.25s var(--image-text-content-transition-delay),
+    opacity 0.3s var(--image-text-content-transition-delay);
+}
+
+.active .image__text-content {
+  transition: transform 0.25s, opacity 0.3s;
+}
+
+.active:hover .image__text-content,
+.expanding .image__text-content {
   transform: translateY(0);
+  opacity: 1;
 }
 
 .image__title {
   font-size: 2em;
-  /* font-weight: bold; */
+  text-align: center;
 }
 
 .image__description {
@@ -127,7 +125,7 @@ Mobile Settings */
 
   .panel:nth-of-type(4),
   .panel:nth-of-type(5) {
-   display: none;
+    display: none;
   }
-
 }
+

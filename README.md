@@ -2,9 +2,8 @@
 
 <!-- -------Team Members------- -->
 Korey
-Ellena
+Ellena Jean
 Amr
 Bintou
 Kriston
 
-# Promotion_Project
