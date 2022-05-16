@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap%27');
 
 :root {
-    --right-bg-color: rgba(87, 84, 236, 0.4);
-    --left-bg-color: rgba(43, 43, 43, 0.3);
+    --right-bg-color: rgba(87, 84, 236, 0.02);
+    --left-bg-color: rgba(43, 43, 43, 0.02);
     /* --left-btn-hover-color: rgba(87, 84, 236, 1);
     --right-btn-hover-color: rgba(28, 122, 28, 1); */
     --hover-width: 75%;
@@ -21,6 +21,21 @@
     overflow: hidden;
     margin: 0;
   }
+
+
+  h2 {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    left: 55%;
+    top: 20%;
+    transform: translateX(-50%);
+    white-space: nowrap; /*this is to set up a non-second line of the text */
+  }
+
   
   h1 {
     position: absolute;
@@ -34,6 +49,11 @@
     transform: translateX(-50%);
     white-space: nowrap; /*this is to set up a non-second line of the text */
   }
+
+  
+
+
+
   .btn {
     position: absolute;
     display: flex;
@@ -97,7 +117,7 @@
 
 .split.left {
   left: 0;
-  background: url('appl_air.jpg');
+  background: url('https://cdn.mobilesyrup.com/wp-content/uploads/2019/03/apple-privacy-gif.gif');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -105,7 +125,7 @@
 
 .split.right {
     right: 0;
-    background: url('sp8.jpg');
+    background: url('https://c.tenor.com/mKGFM0sF4-oAAAAC/microsoft-st.gif');
     background-repeat: no-repeat;
     background-size: cover;
   }
