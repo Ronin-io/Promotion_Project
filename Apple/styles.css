@@ -164,7 +164,7 @@ Overlay Settings */
 }
 
 .panel:hover::before {
-  opacity: 1;
+  opacity: 5;
 }
 
 .image__text-content {
@@ -196,6 +196,7 @@ Overlay Settings */
   font-size: 1.25em;
   margin-top: 0.25em;
 }
+
 
 /* ------------------------------------------------
 Mobile Settings */

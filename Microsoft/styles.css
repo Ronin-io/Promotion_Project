@@ -51,6 +51,7 @@ body {
   width: 90vw;
 }
 
+/* this class selector customizes  */
 .panel {
   display: flex;
   align-items: center;
@@ -82,7 +83,7 @@ li {
   }
 
 
-  /* ---------------------------------------
+  /* -----------------------------------------------------------------------------------------------
   Button Settings */
 
   .btnr:before {
@@ -157,7 +158,7 @@ li {
      100% { background-position: 0 0; }
    } 
 
-/* --------------------------------------------------------
+/* --------------------------------------------------------------------------------------------------------
 Overlay Settings */
 /* https://www.youtube.com/watch?v=exb2ab72Xhs */
 
@@ -226,7 +227,7 @@ when a user hovers over it with a mouse pointer //// transform: translateY is a 
   margin-top: 0.25em;
 }
 
-/* ------------------------------------------------
+/* ----------------------------------------------------------------------------------------------------------
 Mobile Settings */
 
 /* The @media rule is used in media queries to apply different styles for different media types/devices. */

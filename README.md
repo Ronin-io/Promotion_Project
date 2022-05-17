@@ -1,9 +1,9 @@
 # Promotion_Project
 
 <!-- -------Team Members------- -->
-Korey
-Ellena Jean
-Amr
-Bintou
-Kriston
+Korey Soomai (overlay)
+Ellena Jean (Button)
+Amr (Button)
+Bintou Fomba (images)
+Kriston Soomai (overlay)
 
